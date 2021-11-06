@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock title %}
+
+{% block body %}
+
+<h1 class="text-center">Login</h1>
+
+<div class="container d-flex justify-content-center">
+
+<div style="max-width:600px">
+
+<form method="post" action="/login">
+{% csrf_token %}
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" name="email">
+  </div> 
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+  </div>
+  <button type="submit" class="btn btn-primary">LOGIN</button>
+  <a href="/forgot-password">Forgot Password</a>
+</form>
+
+</div>
+
+</div>
+
+
+{% endblock body %}

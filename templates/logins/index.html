@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+
+<h1 class="text-center">hello, {{user.username}}</h1>
+<h2 class="text-center">welcome to our website</h2>
+
+{% if user.is_authenticated %}
+<h1 class="text-center">Change Password</h1>
+
+<div class="container d-flex justify-content-center">
+
+<div style="max-width:600px">
+
+<form method="post" action="/chpass">
+{% csrf_token %}
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Password Now</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" name="pass_now">
+  </div> 
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">New Password</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" name="new_pass">
+  </div>
+  <button type="submit" class="btn btn-primary">Change Password</button>
+</form>
+
+</div>
+
+</div>
+
+{% endif %}
+
+
+{% endblock body %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Login With OTP{% endblock title %}
+
+{% block body %}
+
+<h1 class="text-center">ENTER OTP</h1>
+
+<div class="container d-flex justify-content-center">
+
+<div style="max-width:600px">
+
+<form method="post" action="/login-with-otp">
+{% csrf_token %}
+    <input type="hidden" name="token" value="{{token}}">
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">OTP</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" name="otp">
+  </div>
+  <button type="submit" class="btn btn-primary">LOGIN</button>
+</form>
+
+</div>
+
+</div>
+
+
+{% endblock body %}

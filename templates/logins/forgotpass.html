@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Login With OTP{% endblock title %}
+
+{% block body %}
+
+<h1 class="text-center">Login With OTP</h1>
+
+<div class="container d-flex justify-content-center">
+
+<div style="max-width:600px">
+
+<form method="post" action="/forgot-password">
+{% csrf_token %}
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" name="email">
+  </div>
+  <button type="submit" class="btn btn-primary">SEND OTP</button>
+</form>
+
+</div>
+
+</div>
+
+
+{% endblock body %}
